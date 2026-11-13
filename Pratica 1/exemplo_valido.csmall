@@ -1,0 +1,25 @@
+// Declaracoes globais
+int x;
+float y;
+
+x = 2 + 3 * 4;
+y = x + 1.5;
+print(y);
+
+if (x < 5) {
+    print(x);
+} else {
+    print(y);
+}
+
+while (x < 10) {
+    x = x + 1;
+}
+
+{
+    float x;
+    x = 2.5;
+    print(x);
+}
+
+print(x);
