@@ -1,0 +1,11 @@
+// Programa usado para testar os tokens da linguagem
+int x;
+float y;
+x = 2 + 3 * 4;
+y = x + 1.5;
+print(y);
+if (x <= 5) { print(x); }
+else { print(y); }
+while (x != 10) { x = x - 1 / 2; }
+// Teste de identificadores e operadores restantes
+_abc123 = (x >= 2) == (y > 1) != (x < 3);
