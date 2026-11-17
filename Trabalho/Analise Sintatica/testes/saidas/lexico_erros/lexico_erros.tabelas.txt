@@ -1,0 +1,12 @@
+TABELAS DE SIMBOLOS (1 funcoes)
+
+==================================================================
+Tabela de simbolos da funcao 'main' (definida na linha 1)
+ret_type(main) = DataTypes::void
+==================================================================
+chave     name      datatype          is_param  pos_param  call_refs
+x         x         DataTypes::int    false     -1         NULL
+invalido  invalido  DataTypes::int    false     -1         NULL
+c         c         DataTypes::char   false     -1         NULL
+println   println   DataTypes::void   false     -1         NULL
+

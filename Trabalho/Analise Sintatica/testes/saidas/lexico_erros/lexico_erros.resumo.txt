@@ -1,0 +1,27 @@
+Arquivo analisado: testes/entradas/lexico_erros.p
+  tokens reconhecidos: 62 (incluindo EOF)
+  erros lexicos:       9
+    linha 3: caractere invalido '_'
+    linha 4: constante float mal formada '12.': falta digito apos o ponto
+    linha 5: caractere invalido '@'
+    linha 6: caractere invalido '#'
+    linha 7: caractere '!' isolado (o unico operador com '!' e '!=')
+    linha 9: literal de caractere vazio ''
+    linha 10: literal de caractere com mais de um caractere: 'ab'
+    linha 11: string de formatacao vazia ""
+    linha 12: string de formatacao nao terminada: "sem fim, x);
+  erros sintaticos:    8
+    linha 4: esperado expressao (identificador, constante ou '('), encontrado ';'
+    linha 5: esperado ';', encontrado constante inteira 3
+    linha 6: esperado ';', encontrado constante inteira 1
+    linha 7: esperado '{', encontrado constante inteira 3
+    linha 9: esperado expressao (identificador, constante ou '('), encontrado ';'
+    linha 10: esperado expressao (identificador, constante ou '('), encontrado ';'
+    linha 11: esperado string de formatacao, encontrado ','
+    linha 12: esperado string de formatacao apos '(', encontrado identificador x na linha 13
+  tabelas de simbolos: 1
+Saidas gravadas:
+  testes/saidas/lexico_erros/lexico_erros.tokens.txt
+  testes/saidas/lexico_erros/lexico_erros.erros_lexicos.txt
+  testes/saidas/lexico_erros/lexico_erros.erros_sintaticos.txt
+  testes/saidas/lexico_erros/lexico_erros.tabelas.txt

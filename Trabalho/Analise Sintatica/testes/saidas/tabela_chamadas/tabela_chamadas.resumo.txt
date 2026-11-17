@@ -1,0 +1,10 @@
+Arquivo analisado: testes/entradas/tabela_chamadas.p
+  tokens reconhecidos: 161 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    0
+  tabelas de simbolos: 4
+Saidas gravadas:
+  testes/saidas/tabela_chamadas/tabela_chamadas.tokens.txt
+  testes/saidas/tabela_chamadas/tabela_chamadas.erros_lexicos.txt
+  testes/saidas/tabela_chamadas/tabela_chamadas.erros_sintaticos.txt
+  testes/saidas/tabela_chamadas/tabela_chamadas.tabelas.txt

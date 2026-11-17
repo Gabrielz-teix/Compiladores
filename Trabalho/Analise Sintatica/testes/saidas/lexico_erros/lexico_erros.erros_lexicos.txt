@@ -1,0 +1,11 @@
+ERROS LEXICOS (9)
+
+Linha 3: caractere invalido '_'
+Linha 4: constante float mal formada '12.': falta digito apos o ponto
+Linha 5: caractere invalido '@'
+Linha 6: caractere invalido '#'
+Linha 7: caractere '!' isolado (o unico operador com '!' e '!=')
+Linha 9: literal de caractere vazio ''
+Linha 10: literal de caractere com mais de um caractere: 'ab'
+Linha 11: string de formatacao vazia ""
+Linha 12: string de formatacao nao terminada: "sem fim, x);

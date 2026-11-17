@@ -1,0 +1,20 @@
+TABELAS DE SIMBOLOS (2 funcoes)
+
+==================================================================
+Tabela de simbolos da funcao 'main' (definida na linha 1)
+ret_type(main) = DataTypes::void
+==================================================================
+chave         name          datatype          is_param  pos_param  call_refs
+inteiro       inteiro       DataTypes::int    false     -1         NULL
+outro_valor2  outro_valor2  DataTypes::int    false     -1         NULL
+real          real          DataTypes::float  false     -1         NULL
+letra         letra         DataTypes::char   false     -1         NULL
+println       println       DataTypes::void   false     -1         NULL
+
+==================================================================
+Tabela de simbolos da funcao 'identidade' (definida na linha 22)
+ret_type(identidade) = DataTypes::int
+==================================================================
+chave  name   datatype          is_param  pos_param  call_refs
+a      a      DataTypes::int    true      0          NULL
+

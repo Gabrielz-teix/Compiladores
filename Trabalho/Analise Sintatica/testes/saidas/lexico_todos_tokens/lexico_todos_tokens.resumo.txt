@@ -1,0 +1,10 @@
+Arquivo analisado: testes/entradas/lexico_todos_tokens.p
+  tokens reconhecidos: 157 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    0
+  tabelas de simbolos: 2
+Saidas gravadas:
+  testes/saidas/lexico_todos_tokens/lexico_todos_tokens.tokens.txt
+  testes/saidas/lexico_todos_tokens/lexico_todos_tokens.erros_lexicos.txt
+  testes/saidas/lexico_todos_tokens/lexico_todos_tokens.erros_sintaticos.txt
+  testes/saidas/lexico_todos_tokens/lexico_todos_tokens.tabelas.txt

@@ -1,0 +1,10 @@
+Arquivo analisado: testes/entradas/exemplo2_calculadora.p
+  tokens reconhecidos: 114 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    0
+  tabelas de simbolos: 2
+Saidas gravadas:
+  testes/saidas/exemplo2_calculadora/exemplo2_calculadora.tokens.txt
+  testes/saidas/exemplo2_calculadora/exemplo2_calculadora.erros_lexicos.txt
+  testes/saidas/exemplo2_calculadora/exemplo2_calculadora.erros_sintaticos.txt
+  testes/saidas/exemplo2_calculadora/exemplo2_calculadora.tabelas.txt

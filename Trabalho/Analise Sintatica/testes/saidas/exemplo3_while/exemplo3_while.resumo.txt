@@ -1,0 +1,10 @@
+Arquivo analisado: testes/entradas/exemplo3_while.p
+  tokens reconhecidos: 35 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    0
+  tabelas de simbolos: 1
+Saidas gravadas:
+  testes/saidas/exemplo3_while/exemplo3_while.tokens.txt
+  testes/saidas/exemplo3_while/exemplo3_while.erros_lexicos.txt
+  testes/saidas/exemplo3_while/exemplo3_while.erros_sintaticos.txt
+  testes/saidas/exemplo3_while/exemplo3_while.tabelas.txt

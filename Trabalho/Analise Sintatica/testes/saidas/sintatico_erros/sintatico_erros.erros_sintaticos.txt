@@ -1,0 +1,14 @@
+ERROS SINTATICOS (12)
+
+Linha 2: esperado ';' apos 'b', encontrado '}' na linha 3
+Linha 7: esperado ';' apos '10', encontrado identificador y na linha 8
+Linha 8: esperado ')', encontrado ';'
+Linha 9: esperado expressao (identificador, constante ou '('), encontrado '{'
+Linha 10: esperado '{' apos '10', encontrado identificador x na linha 11
+Linha 13: esperado ')', encontrado '+'
+Linha 14: esperado declaracao, comando ou '}', encontrado 'else'
+Linha 15: esperado ';', encontrado identificador e3
+Linha 16: esperado ':', encontrado 'int'
+Linha 17: esperado ',', encontrado ')'
+Linha 21: esperado 'fn' ou fim do arquivo, encontrado identificador tokens
+Linha 23: esperado nome da funcao (identificador ou 'main'), encontrado '('

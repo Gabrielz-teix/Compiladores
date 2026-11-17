@@ -1,0 +1,22 @@
+Arquivo analisado: testes/entradas/sintatico_erros.p
+  tokens reconhecidos: 118 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    12
+    linha 2: esperado ';' apos 'b', encontrado '}' na linha 3
+    linha 7: esperado ';' apos '10', encontrado identificador y na linha 8
+    linha 8: esperado ')', encontrado ';'
+    linha 9: esperado expressao (identificador, constante ou '('), encontrado '{'
+    linha 10: esperado '{' apos '10', encontrado identificador x na linha 11
+    linha 13: esperado ')', encontrado '+'
+    linha 14: esperado declaracao, comando ou '}', encontrado 'else'
+    linha 15: esperado ';', encontrado identificador e3
+    linha 16: esperado ':', encontrado 'int'
+    linha 17: esperado ',', encontrado ')'
+    linha 21: esperado 'fn' ou fim do arquivo, encontrado identificador tokens
+    linha 23: esperado nome da funcao (identificador ou 'main'), encontrado '('
+  tabelas de simbolos: 3
+Saidas gravadas:
+  testes/saidas/sintatico_erros/sintatico_erros.tokens.txt
+  testes/saidas/sintatico_erros/sintatico_erros.erros_lexicos.txt
+  testes/saidas/sintatico_erros/sintatico_erros.erros_sintaticos.txt
+  testes/saidas/sintatico_erros/sintatico_erros.tabelas.txt

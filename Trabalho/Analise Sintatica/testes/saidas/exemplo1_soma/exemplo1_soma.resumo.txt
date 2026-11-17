@@ -1,0 +1,10 @@
+Arquivo analisado: testes/entradas/exemplo1_soma.p
+  tokens reconhecidos: 60 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    0
+  tabelas de simbolos: 2
+Saidas gravadas:
+  testes/saidas/exemplo1_soma/exemplo1_soma.tokens.txt
+  testes/saidas/exemplo1_soma/exemplo1_soma.erros_lexicos.txt
+  testes/saidas/exemplo1_soma/exemplo1_soma.erros_sintaticos.txt
+  testes/saidas/exemplo1_soma/exemplo1_soma.tabelas.txt

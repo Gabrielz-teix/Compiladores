@@ -1,0 +1,3 @@
+ERROS SINTATICOS (1)
+
+Linha 1: esperado 'fn' (o programa deve ter ao menos uma funcao), encontrado fim do arquivo

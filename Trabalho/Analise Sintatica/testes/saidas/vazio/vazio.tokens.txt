@@ -1,0 +1,5 @@
+VETOR DE TOKENS (1 tokens, na ordem de reconhecimento)
+
+INDICE  LINHA  TOKEN          LEXEMA
+------  -----  -----          ------
+0       1      EOF            

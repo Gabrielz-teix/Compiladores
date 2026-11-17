@@ -1,0 +1,32 @@
+TABELAS DE SIMBOLOS (3 funcoes)
+
+==================================================================
+Tabela de simbolos da funcao 'soma' (definida na linha 1)
+ret_type(soma) = DataTypes::int
+==================================================================
+chave  name   datatype          is_param  pos_param  call_refs
+a      a      DataTypes::int    true      0          NULL
+b      b      DataTypes::int    true      1          NULL
+
+==================================================================
+Tabela de simbolos da funcao 'main' (definida na linha 5)
+ret_type(main) = DataTypes::void
+==================================================================
+chave    name     datatype          is_param  pos_param  call_refs
+x        x        DataTypes::int    false     -1         NULL
+y        y        DataTypes::int    false     -1         NULL
+println  println  DataTypes::void   false     -1         NULL
+soma     soma     DataTypes::int    false     -1         [#1]
+z        z        DataTypes::int    false     -1         NULL
+
+FunctionRegister (chamadas feitas dentro de 'main'):
+  ref  name     num_args  linha  args
+  #1   soma     1         13     [x]
+
+==================================================================
+Tabela de simbolos da funcao '<sem nome, linha 23>' (definida na linha 23)
+ret_type(<sem nome, linha 23>) = DataTypes::void
+==================================================================
+chave  name   datatype          is_param  pos_param  call_refs
+a      a      DataTypes::int    true      0          NULL
+

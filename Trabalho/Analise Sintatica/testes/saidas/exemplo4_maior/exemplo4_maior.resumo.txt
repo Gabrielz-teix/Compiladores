@@ -1,0 +1,10 @@
+Arquivo analisado: testes/entradas/exemplo4_maior.p
+  tokens reconhecidos: 71 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    0
+  tabelas de simbolos: 2
+Saidas gravadas:
+  testes/saidas/exemplo4_maior/exemplo4_maior.tokens.txt
+  testes/saidas/exemplo4_maior/exemplo4_maior.erros_lexicos.txt
+  testes/saidas/exemplo4_maior/exemplo4_maior.erros_sintaticos.txt
+  testes/saidas/exemplo4_maior/exemplo4_maior.tabelas.txt

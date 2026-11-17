@@ -1,0 +1,25 @@
+TABELAS DE SIMBOLOS (2 funcoes)
+
+==================================================================
+Tabela de simbolos da funcao 'calculadora' (definida na linha 1)
+ret_type(calculadora) = DataTypes::float
+==================================================================
+chave  name   datatype          is_param  pos_param  call_refs
+op     op     DataTypes::char   true      0          NULL
+x      x      DataTypes::float  true      1          NULL
+y      y      DataTypes::float  true      2          NULL
+
+==================================================================
+Tabela de simbolos da funcao 'main' (definida na linha 20)
+ret_type(main) = DataTypes::void
+==================================================================
+chave        name         datatype          is_param  pos_param  call_refs
+a            a            DataTypes::float  false     -1         NULL
+b            b            DataTypes::float  false     -1         NULL
+println      println      DataTypes::void   false     -1         NULL
+calculadora  calculadora  DataTypes::float  false     -1         [#1]
+
+FunctionRegister (chamadas feitas dentro de 'main'):
+  ref  name         num_args  linha  args
+  #1   calculadora  3         24     ['*', a, b]
+

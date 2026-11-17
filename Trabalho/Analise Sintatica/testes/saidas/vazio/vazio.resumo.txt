@@ -1,0 +1,11 @@
+Arquivo analisado: testes/entradas/vazio.p
+  tokens reconhecidos: 1 (incluindo EOF)
+  erros lexicos:       0
+  erros sintaticos:    1
+    linha 1: esperado 'fn' (o programa deve ter ao menos uma funcao), encontrado fim do arquivo
+  tabelas de simbolos: 0
+Saidas gravadas:
+  testes/saidas/vazio/vazio.tokens.txt
+  testes/saidas/vazio/vazio.erros_lexicos.txt
+  testes/saidas/vazio/vazio.erros_sintaticos.txt
+  testes/saidas/vazio/vazio.tabelas.txt

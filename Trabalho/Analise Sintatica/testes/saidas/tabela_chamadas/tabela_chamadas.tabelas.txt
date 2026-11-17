@@ -1,0 +1,54 @@
+TABELAS DE SIMBOLOS (4 funcoes)
+
+==================================================================
+Tabela de simbolos da funcao 'main' (definida na linha 1)
+ret_type(main) = DataTypes::void
+==================================================================
+chave          name           datatype          is_param  pos_param  call_refs
+a              a              DataTypes::int    false     -1         NULL
+b              b              DataTypes::int    false     -1         NULL
+media          media          DataTypes::float  false     -1         NULL
+inicial        inicial        DataTypes::char   false     -1         NULL
+dobro          dobro          DataTypes::int    false     -1         [#1, #3, #4, #6]
+imprimir       imprimir       DataTypes::void   false     -1         [#2]
+calcula_media  calcula_media  DataTypes::float  false     -1         [#5]
+println        println        DataTypes::void   false     -1         NULL
+desconhecida   desconhecida   DataTypes::error  false     -1         [#7]
+
+FunctionRegister (chamadas feitas dentro de 'main'):
+  ref  name           num_args  linha  args
+  #1   dobro          1         6      [a]
+  #2   imprimir       3         7      [a, b, 'x']
+  #3   dobro          1         8      [dobro(a)]
+  #4   dobro          1         8      [a]
+  #5   calcula_media  3         9      [a, b, 2.5]
+  #6   dobro          1         11     [b]
+  #7   desconhecida   1         12     [a]
+
+==================================================================
+Tabela de simbolos da funcao 'dobro' (definida na linha 15)
+ret_type(dobro) = DataTypes::int
+==================================================================
+chave  name   datatype          is_param  pos_param  call_refs
+n      n      DataTypes::int    true      0          NULL
+
+==================================================================
+Tabela de simbolos da funcao 'calcula_media' (definida na linha 19)
+ret_type(calcula_media) = DataTypes::float
+==================================================================
+chave  name   datatype          is_param  pos_param  call_refs
+x      x      DataTypes::int    true      0          NULL
+y      y      DataTypes::int    true      1          NULL
+peso   peso   DataTypes::float  true      2          NULL
+soma   soma   DataTypes::float  false     -1         NULL
+
+==================================================================
+Tabela de simbolos da funcao 'imprimir' (definida na linha 25)
+ret_type(imprimir) = DataTypes::void
+==================================================================
+chave    name     datatype          is_param  pos_param  call_refs
+p1       p1       DataTypes::int    true      0          NULL
+p2       p2       DataTypes::int    true      1          NULL
+p3       p3       DataTypes::char   true      2          NULL
+println  println  DataTypes::void   false     -1         NULL
+

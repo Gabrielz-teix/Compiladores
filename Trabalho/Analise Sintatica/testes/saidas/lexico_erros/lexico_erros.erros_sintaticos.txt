@@ -1,0 +1,10 @@
+ERROS SINTATICOS (8)
+
+Linha 4: esperado expressao (identificador, constante ou '('), encontrado ';'
+Linha 5: esperado ';', encontrado constante inteira 3
+Linha 6: esperado ';', encontrado constante inteira 1
+Linha 7: esperado '{', encontrado constante inteira 3
+Linha 9: esperado expressao (identificador, constante ou '('), encontrado ';'
+Linha 10: esperado expressao (identificador, constante ou '('), encontrado ';'
+Linha 11: esperado string de formatacao, encontrado ','
+Linha 12: esperado string de formatacao apos '(', encontrado identificador x na linha 13
