@@ -9,4 +9,4 @@ if (a > b) {
     s = b - a;
 }
 
-print(soma);
+print(s);

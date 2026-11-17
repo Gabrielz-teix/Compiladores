@@ -1,9 +1,3 @@
-/*
- * Compilar: gcc -std=c11 -Wall -Wextra -o csmall csmall.c
- * Executar: ./csmall arquivo.csmall
- * Tokens:   ./csmall --tokens arquivo.csmall
- */
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
@@ -55,11 +49,9 @@ void erroSintatico(int linha, TokenType esp, TokenType ach) {
 }
 void erroSemantico(int linha, const char *msg) { fprintf(stderr, "Erro semantico na linha %d: %s\n", linha, msg); }
 
-/* O lexer percorre o arquivo e entrega um token por vez. */
 Token proximoToken(CodigoFonte *c) {
     Token t = {TOK_EOF, "", c->linha};
     int ch;
-    /* Ignora espaços e comentarios de linha. */
     for (;;) {
         ch = lerCaractere(c);
         if (ch == EOF) { t.linha = c->linha; return t; }
@@ -142,7 +134,6 @@ Token proximoToken(CodigoFonte *c) {
     return t;
 }
 
-/* Tabela de simbolos e controle de escopos. */
 typedef enum { TIPO_INT, TIPO_FLOAT, TIPO_ERRO } TipoDado;
 typedef struct EntradaSimbolo {
     char lexema[TAM_LEXEMA]; TipoDado tipo; int linha;
@@ -185,17 +176,18 @@ TabelaSimbolos *fecharEscopo(TabelaSimbolos *t) {
     free(t); return pai;
 }
 
-/* Parser por descida recursiva e geracao TAC em uma passagem. */
 typedef struct {
     TipoDado tipo;
     char lugar[TAM_LEXEMA];
 } Resultado;
 
+typedef struct { char *dados; size_t tamanho, capacidade; } Buffer;
+
 typedef struct {
     CodigoFonte *codigo;
     Token tokenAtual;
     TabelaSimbolos *tabela;
-    FILE *saida;
+    Buffer codigoGerado;
     int proximoTemporario;
     int proximoRotulo;
 } Parser;
@@ -203,9 +195,24 @@ typedef struct {
 void emitir(Parser *p, const char *fmt, ...) {
     va_list args;
     va_start(args, fmt);
-    vfprintf(p->saida, fmt, args);
+    int n = vsnprintf(NULL, 0, fmt, args);
     va_end(args);
-    fputc('\n', p->saida);
+    if (n < 0) { fprintf(stderr, "Erro ao formatar instrucao\n"); exit(EXIT_FAILURE); }
+    Buffer *b = &p->codigoGerado;
+    size_t necessario = b->tamanho + (size_t)n + 2; /* instrucao + '\n' + '\0' */
+    if (necessario > b->capacidade) {
+        size_t nova = b->capacidade ? b->capacidade * 2 : 256;
+        while (nova < necessario) nova *= 2;
+        char *dados = realloc(b->dados, nova);
+        if (!dados) { fprintf(stderr, "Memoria insuficiente\n"); exit(EXIT_FAILURE); }
+        b->dados = dados; b->capacidade = nova;
+    }
+    va_start(args, fmt);
+    vsnprintf(b->dados + b->tamanho, (size_t)n + 1, fmt, args);
+    va_end(args);
+    b->tamanho += (size_t)n;
+    b->dados[b->tamanho++] = '\n';
+    b->dados[b->tamanho] = '\0';
 }
 
 void novoTemporario(Parser *p, char *destino, size_t capacidade) {
@@ -253,7 +260,6 @@ void declaracao(Parser *p) {
     casar(p, TOK_IDENTIFIER);
     if (!inserirSimbolo(p->tabela, id.lexema, tipo, id.linha))
         semanticaInvalida(id.linha, "variavel redeclarada no mesmo escopo", id.lexema);
-    /* A Pratica 1 aceitava apenas 'int a;'. A entrada desta pratica usa 'int a = 5;'. */
     if (p->tokenAtual.tipo == TOK_ASSIGN) {
         casar(p, TOK_ASSIGN);
         Resultado r = expressao(p);
@@ -422,14 +428,21 @@ int main(int argc, char **argv) {
         fecharCodigoFonte(&codigo);
         return t.tipo == TOK_INVALID ? EXIT_FAILURE : EXIT_SUCCESS;
     }
+    Parser parser = { .codigo = &codigo };
+    int sucesso = analisarPrograma(&parser);
+    fecharCodigoFonte(&codigo);
+    if (!sucesso) { free(parser.codigoGerado.dados); return EXIT_FAILURE; }
+
     FILE *saida = stdout;
     if (argc == 3) {
         saida = fopen(argv[2], "w");
-        if (!saida) { perror("Erro abrindo arquivo TAC"); fecharCodigoFonte(&codigo); return EXIT_FAILURE; }
+        if (!saida) { perror("Erro abrindo arquivo TAC"); free(parser.codigoGerado.dados); return EXIT_FAILURE; }
     }
-    Parser parser = { .codigo = &codigo, .saida = saida };
-    int sucesso = analisarPrograma(&parser);
-    fecharCodigoFonte(&codigo);
-    if (saida != stdout) fclose(saida);
-    return sucesso ? EXIT_SUCCESS : EXIT_FAILURE;
+    Buffer *b = &parser.codigoGerado;
+    int ok = b->tamanho == 0 || fwrite(b->dados, 1, b->tamanho, saida) == b->tamanho;
+    if (saida != stdout) ok = (fclose(saida) == 0) && ok;
+    else ok = (fflush(stdout) == 0) && ok;
+    free(b->dados);
+    if (!ok) { fprintf(stderr, "Erro gravando o codigo TAC\n"); return EXIT_FAILURE; }
+    return EXIT_SUCCESS;
 }
